@@ -1,6 +1,6 @@
 {
   "name": "callbag-last-element",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "👜 Callbag operator that emits only the last item emitted by the source.",
   "main": "dist/callbag-last-element.cjs.js",
   "module": "dist/callbag-last-element.esm.js",
