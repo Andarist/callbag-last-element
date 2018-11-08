@@ -4,11 +4,12 @@ export default function last(source) {
 
     let gotValue = false
     let disposed = false
+    let talkback
     let value
 
     source(0, (type, data) => {
       if (type === 0) {
-        const talkback = data
+        talkback = data
         sink(0, (type, data) => {
           if (type === 2) {
             disposed = true
@@ -19,9 +20,10 @@ export default function last(source) {
       }
 
       if (type === 1) {
-          gotValue = true
-          value = data
-          return
+        gotValue = true
+        value = data
+        talkback(1)
+        return
       }
 
       if (type === 2 && !data && gotValue) {
