@@ -2,14 +2,21 @@
   "name": "callbag-last-element",
   "version": "1.0.1",
   "description": "👜 Callbag operator that emits only the last item emitted by the source.",
-  "main": "dist/callbag-last-element.cjs.js",
-  "module": "dist/callbag-last-element.esm.js",
+  "main": "./dist/callbag-last-element.es5.cjs.js",
+  "module": "./dist/callbag-last-element.es5.esm.js",
+  "exports": {
+    "module": {
+      "browser": "./dist/callbag-last-element.browser.esm.js",
+      "default": "./dist/callbag-last-element.esm.js"
+    },
+    "import": "./dist/callbag-last-element.esm.js",
+    "default": "./dist/callbag-last-element.cjs.js"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
     "test": "echo \"Warning: no test specified\" || jest --env=node",
-    "precommit": "lint-staged",
     "prebuild": "rimraf dist",
     "build": "rollup -c",
     "preversion": "npm test",
@@ -30,18 +37,16 @@
   },
   "homepage": "https://github.com/Andarist/callbag-last-element#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^22.4.3",
-    "babel-plugin-annotate-pure-calls": "^0.4.0",
-    "husky": "^0.14.3",
-    "jest": "^22.4.3",
-    "lint-staged": "^7.0.0",
-    "prettier": "^1.11.1",
-    "rimraf": "^2.6.2",
-    "rollup": "^0.66.6",
-    "rollup-plugin-babel": "^4.0.3"
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "@rollup/plugin-babel": "^5.2.1",
+    "babel-jest": "^26.3.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.28.2"
   }
 }
